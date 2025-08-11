@@ -114,14 +114,18 @@ body > footer {
     margin-bottom: 10px;
 }
 
-.about-tweets-row {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    justify-content: center;
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto 20px auto;
 }
-.about, .tweets {
-    flex: 1 1 0;
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    display: block;
 }
 /* Profile Card */
 .quick-facts {
