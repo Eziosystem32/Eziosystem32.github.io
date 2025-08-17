@@ -501,8 +501,10 @@ nav ul li a:hover, nav ul li a.active {
 /* Make containers fit mobile screens and stack vertically */
 @media (max-width: 768px) {
     body {
-        font-size: 1em;
-        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        max-height: 400vh;
     }
     .main-content,
     .content-index,
@@ -588,41 +590,42 @@ nav ul li a:hover, nav ul li a.active {
         margin: 10px 0;
     }
     /* Navigation menu: sidebar style for mobile */
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 20px;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100%;
-    width: 250px;
-    background-color: #f9f9f4;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    transition: right 0.3s ease;
-    padding: 60px 20px;
-    z-index: 999;
-  }
-
-  nav.open {
-    right: 0;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  nav a {
-    font-size: 18px;
-  }
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 15px;
+        transition: left 0.3s ease;
+        border-radius: 0 15px 15px 0;
+        z-index: 9999;
+    }
+    nav ul li {
+        margin: 18px 0;
+    }
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 10001;
+        background: rgba(50,120,200,0.7);
+        color: #fff;
+        border: none;
+        font-size: 2em;
+        border-radius: 10px;
+        padding: 8px 16px;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+    }
+    .nav-toggle:checked ~ ul {
+        left: 0;
+    }
     /* Hide sidebar/main-content margin for mobile */
     .main-content {
         margin-left: 0;
@@ -631,7 +634,8 @@ nav ul li a:hover, nav ul li a.active {
         display: none;
     }
     body > footer {
-        font-size: 0.95em;
-        padding: 8px 0;
+    margin-top: auto;
+    text-align: center;
+    max-height: fit-content;
     }
 }
