@@ -588,7 +588,7 @@ nav ul li a:hover, nav ul li a.active {
         margin: 10px 0;
     }
     /* Navigation menu: sidebar style for mobile */
-   .navbar {
+  .navbar {
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 20px;
