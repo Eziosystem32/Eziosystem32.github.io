@@ -1,0 +1,22 @@
+/* Print styles */
+body {
+    font-family: Georgia, serif;
+    color: black;
+    background: white;
+}
+nav, .menu-toggle { display: none; } /* Hide nav on print */
+.skill-bar {
+    background-color: rgba(20, 20, 20, 0.0);
+    max-width: 500px;
+    margin: 10px 20px;
+    text-align: left;
+}
+.bar {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.fill {
+    background: linear-gradient(to right, #00d4aa, #ff9966);
+    height: 15px;
+}
