@@ -26,7 +26,6 @@ h2{
     font-weight: 700;
 }
 div {
-    background: rgba(20, 20, 20, 0.25);
     backdrop-filter: blur(10px);
     border-radius: 20px;
 }
@@ -48,20 +47,23 @@ body > footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364),
-        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        background: 
+        linear-gradient(135deg, rgba(0, 45, 65, 0.4), rgba(0, 78, 61, 0.4)),
+        url('https://images.unsplash.com/photo-1482385916434-814664df9c5b?q=80&w=1093&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    }
+    body, h2, p, .section-title, a, .btn, .contact-card input, .contact-card textarea {
         color: white;
     }
-    nav, .socials-card {
-        background: rgba(255,255,255,0.08);
+    nav, .socials-card, div,  .education, .about, .services-section, .portfolio-section, .skills-page, .btn, .contact-card input, .contact-card textarea {
+        background: rgba(20, 20, 20, 0.25);
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body {
+    body, h2, p, .section-title, a, .btn, .contact-card input, .contact-card textarea {
         color: black;
     }
-    nav, .socials-card {
+    nav, .socials-card, div,  .education, .about, .services-section, .portfolio-section, .skills-page, .btn,.contact-card input, .contact-card textarea {
         background: rgba(255,255,255,0.6);
     }
 }
@@ -105,7 +107,7 @@ nav ul li a:hover, nav ul li a.active {
         "education services";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 20px;
+    gap: 25px;
     max-width: 1200px;
     margin: 40px auto;
     align-items: start;
@@ -158,21 +160,16 @@ nav ul li a:hover, nav ul li a.active {
 /* Education section */
 .education {
     grid-area: education;
-    flex: 1 1 350px;
     min-width: 280px;
     max-width: 600px;
     margin: 30px auto;
-    background: rgba(20, 20, 20, 0.25);
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     backdrop-filter: blur(8px);
-    z-index: 1;
-    position: relative;
 }
 .education h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: rgba(255,255,255,0.8);
 }
 .education p{
     margin: 20px;
@@ -181,12 +178,8 @@ nav ul li a:hover, nav ul li a.active {
 
 /* About & Services inline layout */
 .about-services-row {
-    display: flex;
     grid-area: about;
-    gap: 40px;
     justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
     margin: 40px auto;
     max-width: 1200px;
 }
@@ -203,16 +196,12 @@ nav ul li a:hover, nav ul li a.active {
 
 /* About section */
 .about {
-    flex: 1 1 350px;
     min-width: 280px;
     max-width: 600px;
     margin: 30px auto;
-    background: rgba(20, 20, 20, 0.25);
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     backdrop-filter: blur(8px);
-    z-index: 1;
-    position: relative;
 }
 
 /* Profile image */
@@ -228,7 +217,6 @@ nav ul li a:hover, nav ul li a.active {
     grid-area: services;
     flex: 1 1 350px;
     min-width: 280px;
-    background: rgba(20, 20, 20, 0.25);
     border-radius: 20px;
     max-width: 600px;
     margin: 30px auto;
@@ -261,7 +249,6 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Portfolio section container */
 .portfolio-section {
-    background: rgba(20, 20, 20, 0.25);
     border-radius: 20px;
     padding: 20px;
     position: relative;
@@ -292,15 +279,6 @@ nav ul li a:hover, nav ul li a.active {
     text-align: center;
     margin: 20px 0;
     font-size: 1.5em;
-    color: rgba(255,255,255,0.8);
-}
-
-/* Portfolio notices */
-.notice {
-    text-align: center;
-    font-size: 1.2em;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 20px;
 }
 
 /* =========================
@@ -377,22 +355,20 @@ nav ul li a:hover, nav ul li a.active {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(15px);
     padding: 20px;
     border-radius: 30px;
     max-width: 500px;
     margin: auto;
 }
-.socials-card a {
-    color: white;
+.socials-card a, .btn {
     text-decoration: none;
     padding: 10px 15px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
     border-radius: 15px;
     transition: 0.3s;
 }
-.socials-card a:hover {
+.socials-card a:hover, .btn:hover {
     background: rgba(255,255,255,0.6);
     color: black;
 }
@@ -403,6 +379,40 @@ nav ul li a:hover, nav ul li a.active {
     margin-right: 10px;
     vertical-align: middle;
     padding: 3px;
+}
+.contact-card{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin: 20px auto;
+    max-width: 600px;
+}
+/* Contact form styles */
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact-card label {
+    font-weight: bold;
+}
+.contact-card input, .contact-card textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    border: 1px solid rgba(20, 20, 20, 0.25);
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.2s;
+}
+.contact-card input:focus, .contact-card textarea:focus {
+    font-family: monospace;
+    border-color: #00d4aa;
+    outline: none;
 }
 
 /* =========================
@@ -453,4 +463,147 @@ nav ul li a:hover, nav ul li a.active {
 
 .main-content {
   margin-left: 220px;
+}
+
+/* =========================
+   MOBILE STYLES (≤ 768px)
+   ========================= */
+
+/* Make containers fit mobile screens and stack vertically */
+@media (max-width: 768px) {
+    body {
+        font-size: 1em;
+        padding: 0;
+    }
+    .main-content,
+    .content-index,
+    .portfolio-section,
+    .skills-page,
+    .contact-card {
+        margin: 10px;
+        max-width: 98vw;
+        border-radius: 12px;
+        padding: 10px;
+    }
+    .content-index {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 10px auto;
+    }
+    .about,
+    .education,
+    .services-section {
+        min-width: 0;
+        max-width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .service {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .profile-img {
+        width: 80px;
+        margin-bottom: 8px;
+    }
+    .gallery {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .gallery img {
+        width: 98vw;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .skills-page {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px;
+    }
+    .blocks {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    .tool-icon {
+        grid-template-columns: repeat(2, minmax(60px, 1fr));
+        gap: 8px;
+    }
+    .socials-card {
+        grid-template-columns: 1fr;
+        max-width: 98vw;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .contact-card {
+        max-width: 98vw;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .contact-card input,
+    .contact-card textarea {
+        width: 100%;
+        font-size: 1em;
+    }
+    .hero {
+        padding: 40px 10px;
+        margin: 10px 0;
+        font-size: 1.1em;
+    }
+    .section-title {
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+    /* Navigation menu: sidebar style for mobile */
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: rgba(20, 20, 20, 0.95);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 15px;
+        transition: left 0.3s ease;
+        border-radius: 0 15px 15px 0;
+        z-index: 9999;
+    }
+    nav ul li {
+        margin: 18px 0;
+    }
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 10001;
+        background: rgba(50,120,200,0.7);
+        color: #fff;
+        border: none;
+        font-size: 2em;
+        border-radius: 10px;
+        padding: 8px 16px;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+    }
+    .nav-toggle:checked ~ ul {
+        left: 0;
+    }
+    /* Hide sidebar/main-content margin for mobile */
+    .main-content {
+        margin-left: 0;
+    }
+    .sidebar {
+        display: none;
+    }
+    body > footer {
+        font-size: 0.95em;
+        padding: 8px 0;
+    }
 }
